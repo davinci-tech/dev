@@ -1,0 +1,11 @@
+UNAME := $(shell uname)
+ifeq ($(UNAME), Linux)
+	RUN_ := .\main.o
+else
+	RUN_ := .\main.exe
+endif
+
+run:
+	g++ .\main.cpp -o .\main && $(RUN_)
+	
+	

@@ -3,5 +3,5 @@ git checkout main
 git fetch
 git add .
 git commit -a -m "new files"
-git pull origin main
+git pull
 git push -u origin main

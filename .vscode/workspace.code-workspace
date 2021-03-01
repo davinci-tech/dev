@@ -80,7 +80,15 @@
 			"syslimits.h": "c",
 			"limits.h": "c"
 		},
-		"editor.fontSize": 15
+		"editor.fontSize": 15,
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			".tmp.drivedownload": true
+		}
 	},
 	"launch": {
 		"version": "0.2.0",

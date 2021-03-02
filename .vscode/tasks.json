@@ -1,74 +1,74 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "_C/C++: g++.exe BUILD and RUN active file",
-            "type": "shell",
-            "dependsOn": "_C/C++: g++.exe BUILD active file",
-            "command": "cd ${fileDirname} && .${pathSeparator}${fileBasenameNoExtension}.exe",
-            "presentation": {
-                "reveal": "always",
-                "focus": true
-            },
-            "problemMatcher": "$gcc",
-            "group": "build"
-        },
-        {
-            "label": "_C/C++: g++.exe BUILD and RUN active file + print execution time",
-            "type": "shell",
-            "dependsOn": "_C/C++: g++.exe BUILD active file",
-            "command": "cd ${fileDirname} && ${workspaceFolder}${pathSeparator}proiecte${pathSeparator}.cpp${pathSeparator}programTimer${pathSeparator}main.exe .${pathSeparator}${fileBasenameNoExtension}.exe",
-            "presentation": {
-                "reveal": "silent",
-                "focus": true
-            },
-            "problemMatcher": "$gcc",
-            "group": "build"
-        },
-        {
-            "label": "_C/C++: g++.exe RUN active file + print execution time",
-            "type": "shell",
-            "command": "cd ${fileDirname} && ${workspaceFolder}${pathSeparator}proiecte${pathSeparator}.cpp${pathSeparator}programTimer${pathSeparator}main.exe .${pathSeparator}${fileBasenameNoExtension}.exe",
-            "presentation": {
-                "reveal": "silent",
-                "focus": true
-            },
-            "problemMatcher": "$gcc",
-            "group": "build"
-        },
-        {
-            "label": "_C/C++: g++.exe BUILD active file",
-            "type": "cppbuild",
-            "command": "D:\\Users\\nstef\\MinGW-64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
-            "args": [
-                "${file}",
-                "-O2",
-                "-Im",
-                "-g",
-                "-Wall",
-                "-static",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "D:\\Users\\nstef\\MinGW\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "detail": "compiler: D:\\Users\\nstef\\MinGW-64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
-            "group": "build"
-        },
-        {
-            "label": "_C/C++: g++.exe RUN active file",
-            "type": "shell",
-            "command": "cd ${fileDirname} && .${pathSeparator}${fileBasenameNoExtension}.exe",
-            "presentation": {
-                "reveal": "always",
-                "focus": true
-            },
-            "problemMatcher": "$gcc",
-            "group": "build"
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+  {
+  "label": "_C/C++: g++.exe BUILD and RUN active file",
+  "type": "shell",
+  "dependsOn": "_C/C++: g++.exe BUILD active file",
+  "command": "cd ${fileDirname} && .${pathSeparator}${fileBasenameNoExtension}.exe",
+  "presentation": {
+  "reveal": "always",
+  "focus": true
+  },
+  "problemMatcher": "$gcc",
+  "group": "build"
+  },
+  {
+  "label": "_C/C++: g++.exe BUILD and RUN active file + print execution time",
+  "type": "shell",
+  "dependsOn": "_C/C++: g++.exe BUILD active file",
+  "command": "cd ${fileDirname} && ${workspaceFolder}${pathSeparator}proiecte${pathSeparator}.cpp${pathSeparator}programTimer${pathSeparator}main.exe .${pathSeparator}${fileBasenameNoExtension}.exe",
+  "presentation": {
+  "reveal": "silent",
+  "focus": true
+  },
+  "problemMatcher": "$gcc",
+  "group": "build"
+  },
+  {
+  "label": "_C/C++: g++.exe RUN active file + print execution time",
+  "type": "shell",
+  "command": "cd ${fileDirname} && ${workspaceFolder}${pathSeparator}proiecte${pathSeparator}.cpp${pathSeparator}programTimer${pathSeparator}main.exe .${pathSeparator}${fileBasenameNoExtension}.exe",
+  "presentation": {
+  "reveal": "silent",
+  "focus": true
+  },
+  "problemMatcher": "$gcc",
+  "group": "build"
+  },
+  {
+  "label": "_C/C++: g++.exe BUILD active file",
+  "type": "cppbuild",
+  "command": "D:\\Users\\nstef\\MinGW-64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+  "args": [
+  "${file}",
+  "-O2",
+  "-Im",
+  "-g",
+  "-Wall",
+  "-static",
+  "-o",
+  "${fileDirname}\\${fileBasenameNoExtension}.exe"
+  ],
+  "options": {
+  "cwd": "D:\\Users\\nstef\\MinGW\\bin"
+  },
+  "problemMatcher": [
+  "$gcc"
+  ],
+  "detail": "compiler: D:\\Users\\nstef\\MinGW-64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+  "group": "build"
+  },
+  {
+  "label": "_C/C++: g++.exe RUN active file",
+  "type": "shell",
+  "command": "cd ${fileDirname} && .${pathSeparator}${fileBasenameNoExtension}.exe",
+  "presentation": {
+  "reveal": "always",
+  "focus": true
+  },
+  "problemMatcher": "$gcc",
+  "group": "build"
+  }
+  ]
 }

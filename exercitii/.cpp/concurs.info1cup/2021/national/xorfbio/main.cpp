@@ -14,61 +14,61 @@ ll generateFib();
 int main()
 {
 
-    fin >> Q;
-    for (ll i = 0; i < Q; i++)
-        for (int j = 1; j < 4; j++)
-            fin >> cerinte[i][j];
+  fin >> Q;
+  for (ll i = 0; i < Q; i++)
+  for (int j = 1; j < 4; j++)
+  fin >> cerinte[i][j];
 
-    for (ll i = 0; i < Q; i++)
-    {
-        ll deimpartitor = 1 << cerinte[i][1];
-        ll impartitor = 0;
-        ll resultat = 0;
-        ll sumxor = 0;
-        ll sumxorIsSet = false;
-        l = cerinte[i][2];  // capatul din stanga
-        r = cerinte[i][3];  // capatul din dreapta
+  for (ll i = 0; i < Q; i++)
+  {
+  ll deimpartitor = 1 << cerinte[i][1];
+  ll impartitor = 0;
+  ll resultat = 0;
+  ll sumxor = 0;
+  ll sumxorIsSet = false;
+  l = cerinte[i][2];  // capatul din stanga
+  r = cerinte[i][3];  // capatul din dreapta
 
-        while (fPos < l)
-        {
-            generateFib();
-        }
-        while (fPos <= r)
-        {
-            if (sumxorIsSet == false)
-            {
-                sumxor = generateFib();
-                sumxorIsSet = true;
-            }
-            else
-                sumxor = sumxor ^ generateFib();
-        }
-        impartitor = sumxor;
+  while (fPos < l)
+  {
+  generateFib();
+  }
+  while (fPos <= r)
+  {
+  if (sumxorIsSet == false)
+  {
+  sumxor = generateFib();
+  sumxorIsSet = true;
+  }
+  else
+  sumxor = sumxor ^ generateFib();
+  }
+  impartitor = sumxor;
 
-        resultat = ((impartitor) &(deimpartitor-1)); // resultat = impartitor % deimpartitor; 
-        fout << resultat << '\n';
-    }
+  resultat = ((impartitor) &(deimpartitor-1)); // resultat = impartitor % deimpartitor; 
+  fout << resultat << '\n';
+  }
 
-    return 0;
+  return 0;
 }
 
 // genereaza urmatorul numar fib
 ll generateFib()
 {
-    ll resultat;
-    if (fPos == 1)
-        resultat = 0;
-    else if (fPos == 2)
-        resultat = 1;
-    else
-    {
-        resultat = fT1 + fT2;
-        fT1 = fT2;
-        fT2 = resultat;
-    }
-    fPos++;
+  ll resultat;
+  if (fPos == 1)
+  resultat = 0;
+  else if (fPos == 2)
+  resultat = 1;
+  else
+  {
+  resultat = fT1 + fT2;
+  fT1 = fT2;
+  fT2 = resultat;
+  }
+  fPos++;
 
-    return resultat;
+  return resultat;
 }
 
 // 0 1 1 2 3 5 11

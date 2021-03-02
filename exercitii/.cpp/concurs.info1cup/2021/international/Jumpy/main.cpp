@@ -13,14 +13,14 @@ char board[505][505];
 
 void Read()
 {
-    input >> N >> M;
-    for (size_t i = 0; i < N; i++)
-    {
-        for (size_t j = 0; j < M; j++)
-        {
-            input >> board[i][j];
-        }
-    }
+  input >> N >> M;
+  for (size_t i = 0; i < N; i++)
+  {
+  for (size_t j = 0; j < M; j++)
+  {
+  input >> board[i][j];
+  }
+  }
 }
 
 void Solve()
@@ -29,22 +29,22 @@ void Solve()
 
 void Show()
 {
-    for (size_t i = 0; i < N; i++)
-    {
-        for (size_t j = 0; j < M; j++)
-        {
-            output << board[i][j] << ' ';
-        }
-        output << '\n';
-    }
+  for (size_t i = 0; i < N; i++)
+  {
+  for (size_t j = 0; j < M; j++)
+  {
+  output << board[i][j] << ' ';
+  }
+  output << '\n';
+  }
 }
 
 int main()
 {
 
-    Read();
-    Solve();
-    Show();
+  Read();
+  Solve();
+  Show();
 
-    return 0;
+  return 0;
 }

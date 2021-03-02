@@ -1,62 +1,62 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "_C/C++: g++.exe BUILD active file",
-            "type": "cppbuild",
-            "command": "D:\\Users\\nstef\\MinGW\\bin\\g++.exe",
-            "args": [
-                "${file}",
-                "-O2",
-                "-Im",
-                "-Wall",
-                "-static",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "D:\\Users\\nstef\\MinGW\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "compiler: D:\\Users\\nstef\\MinGW\\bin\\g++.exe"
-        },
-        {
-            "label": "_C/C++: g++.exe RUN active file",
-            "type": "shell",
-            "windows": {
-                "command": "${fileDirname}/${fileBasenameNoExtension}.exe"
-            },
-            "linux": {
-                "command": "${fileDirname}/${fileBasenameNoExtesnion}.o"
-            },
-            "presentation": {
-                "reveal": "always",
-                "focus": true
-            },
-            "problemMatcher": "$gcc",
-        },
-        {
-            "label": "_C/C++: g++.exe BUILD and RUN active file",
-            "type": "shell",
-            "dependsOn": "_C/C++: g++.exe BUILD active file",
-            "windows": {
-                "command": "${fileDirname}/${fileBasenameNoExtension}.exe"
-            },
-            "linux": {
-                "command": "${fileDirname}/${fileBasenameNoExtesnion}.o"
-            },
-            "presentation": {
-                "reveal": "always",
-                "focus": true
-            },
-            "problemMatcher": "$gcc",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+  {
+  "label": "_C/C++: g++.exe BUILD active file",
+  "type": "cppbuild",
+  "command": "D:\\Users\\nstef\\MinGW\\bin\\g++.exe",
+  "args": [
+  "${file}",
+  "-O2",
+  "-Im",
+  "-Wall",
+  "-static",
+  "-o",
+  "${fileDirname}\\${fileBasenameNoExtension}.exe"
+  ],
+  "options": {
+  "cwd": "D:\\Users\\nstef\\MinGW\\bin"
+  },
+  "problemMatcher": [
+  "$gcc"
+  ],
+  "group": "build",
+  "detail": "compiler: D:\\Users\\nstef\\MinGW\\bin\\g++.exe"
+  },
+  {
+  "label": "_C/C++: g++.exe RUN active file",
+  "type": "shell",
+  "windows": {
+  "command": "${fileDirname}/${fileBasenameNoExtension}.exe"
+  },
+  "linux": {
+  "command": "${fileDirname}/${fileBasenameNoExtesnion}.o"
+  },
+  "presentation": {
+  "reveal": "always",
+  "focus": true
+  },
+  "problemMatcher": "$gcc",
+  },
+  {
+  "label": "_C/C++: g++.exe BUILD and RUN active file",
+  "type": "shell",
+  "dependsOn": "_C/C++: g++.exe BUILD active file",
+  "windows": {
+  "command": "${fileDirname}/${fileBasenameNoExtension}.exe"
+  },
+  "linux": {
+  "command": "${fileDirname}/${fileBasenameNoExtesnion}.o"
+  },
+  "presentation": {
+  "reveal": "always",
+  "focus": true
+  },
+  "problemMatcher": "$gcc",
+  "group": {
+  "kind": "build",
+  "isDefault": true
+  }
+  }
+  ]
 }

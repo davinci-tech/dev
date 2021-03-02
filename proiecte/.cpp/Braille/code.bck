@@ -20,51 +20,51 @@ void print(std::vector<char> _print1, std::vector<char> _print2, std::vector<cha
 
 int main()
 {
-    if (!fin.is_open()) {
-        std::cerr << "File '" << INPUT_FILE << "' couldn't be opend or it doesn't exist";
-        return 1;
-    }
+  if (!fin.is_open()) {
+  std::cerr << "File '" << INPUT_FILE << "' couldn't be opend or it doesn't exist";
+  return 1;
+  }
 
-    char cc = 0; // current character
-    while (fin.get(cc))
-    {
-        switch (cc)
-        {
-        case 'A':
-            letter = l_A;
-            break;
-        case 'B':
-            letter = l_B;
-            break;
-        case 'C':
-            letter = l_C;
-            break;
-        case ' ':
-            letter = l_space;
-            break;
-        case '\n':
-            print(print1, print2, print3);
-            std::cout << '\n';
-            print1.clear();
-            print2.clear();
-            print3.clear();
-            break;
-        default:
-            break;
-        }
+  char cc = 0; // current character
+  while (fin.get(cc))
+  {
+  switch (cc)
+  {
+  case 'A':
+  letter = l_A;
+  break;
+  case 'B':
+  letter = l_B;
+  break;
+  case 'C':
+  letter = l_C;
+  break;
+  case ' ':
+  letter = l_space;
+  break;
+  case '\n':
+  print(print1, print2, print3);
+  std::cout << '\n';
+  print1.clear();
+  print2.clear();
+  print3.clear();
+  break;
+  default:
+  break;
+  }
 
-        if (cc != '\n')
-        {
-            for (size_t i = 0; i < 3; i++)
-            {
-                print1.push_back(letter[0][i]);
-                print2.push_back(letter[1][i]);
-                print3.push_back(letter[2][i]);
-            }
-        }
-    }
+  if (cc != '\n')
+  {
+  for (size_t i = 0; i < 3; i++)
+  {
+  print1.push_back(letter[0][i]);
+  print2.push_back(letter[1][i]);
+  print3.push_back(letter[2][i]);
+  }
+  }
+  }
 
-    return 0;
+  return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
@@ -80,22 +80,22 @@ int main()
 
 void print(std::vector<char> _print1, std::vector<char> _print2, std::vector<char> _print3)
 {
-    for (size_t i = 0; i < _print1.size(); i++)
-    {
-        stringPrint += _print1[i];
-    }
-    stringPrint += '\n';
-    for (size_t i = 0; i < _print2.size(); i++)
-    {
-        stringPrint += _print2[i];
-    }
-    stringPrint += '\n';
-    for (size_t i = 0; i < _print3.size(); i++)
-    {
-        stringPrint += _print3[i];
-    }
-    std::cout << stringPrint;
-    stringPrint = "";
+  for (size_t i = 0; i < _print1.size(); i++)
+  {
+  stringPrint += _print1[i];
+  }
+  stringPrint += '\n';
+  for (size_t i = 0; i < _print2.size(); i++)
+  {
+  stringPrint += _print2[i];
+  }
+  stringPrint += '\n';
+  for (size_t i = 0; i < _print3.size(); i++)
+  {
+  stringPrint += _print3[i];
+  }
+  std::cout << stringPrint;
+  stringPrint = "";
 }
 
 
@@ -142,75 +142,75 @@ void print(std::vector<char> _print1, std::vector<char> _print2, std::vector<cha
 
 int main()
 {
-    if (!fin.is_open()) {
-        std::cerr << "File '" << INPUT_FILE << "' couldn't be opend or it doesn't exist";
-        return 1;
-    }
+  if (!fin.is_open()) {
+  std::cerr << "File '" << INPUT_FILE << "' couldn't be opend or it doesn't exist";
+  return 1;
+  }
 
-    char cc = 0; // current character
-    while (fin.get(cc))
-    {
-        switch (cc)
-        {
-        case 'A':
-            letter = l_A;
-            break;
-        case 'B':
-            letter = l_B;
-            break;
-        case 'C':
-            letter = l_C;
-            break;
-        case ' ':
-            letter = l_space;
-            break;
-        case '\n':
-            print(print1, print2, print3);
-            print1.clear();
-            print2.clear();
-            print3.clear();
-            break;
-        default:
-            break;
-        }
+  char cc = 0; // current character
+  while (fin.get(cc))
+  {
+  switch (cc)
+  {
+  case 'A':
+  letter = l_A;
+  break;
+  case 'B':
+  letter = l_B;
+  break;
+  case 'C':
+  letter = l_C;
+  break;
+  case ' ':
+  letter = l_space;
+  break;
+  case '\n':
+  print(print1, print2, print3);
+  print1.clear();
+  print2.clear();
+  print3.clear();
+  break;
+  default:
+  break;
+  }
 
-        if (cc != '\n')
-        {
-            for (size_t i = 0; i < 3; i++)
-            {
-                print1.push_back(letter[0][i]);
-                print2.push_back(letter[1][i]);
-                print3.push_back(letter[2][i]);
-            }
-        }
-    }
+  if (cc != '\n')
+  {
+  for (size_t i = 0; i < 3; i++)
+  {
+  print1.push_back(letter[0][i]);
+  print2.push_back(letter[1][i]);
+  print3.push_back(letter[2][i]);
+  }
+  }
+  }
 
-    print(print1, print2, print3);
-    /* If there is a bug, uncomment this
-    print1.clear();
-    print2.clear();
-    print3.clear();
-    */
-    return 0;
+  print(print1, print2, print3);
+  /* If there is a bug, uncomment this
+  print1.clear();
+  print2.clear();
+  print3.clear();
+  */
+  return 0;
 }
 
 void print(std::vector<char> _print1, std::vector<char> _print2, std::vector<char> _print3)
 {
-    for (size_t i = 0; i < _print1.size(); i++)
-    {
-        stringPrint += _print1[i];
-    }
-    stringPrint += '\n';
-    for (size_t i = 0; i < _print2.size(); i++)
-    {
-        stringPrint += _print2[i];
-    }
-    stringPrint += '\n';
-    for (size_t i = 0; i < _print3.size(); i++)
-    {
-        stringPrint += _print3[i];
-    }
-    stringPrint += '\n';
-    std::cout << stringPrint;
-    stringPrint = "";
+  for (size_t i = 0; i < _print1.size(); i++)
+  {
+  stringPrint += _print1[i];
+  }
+  stringPrint += '\n';
+  for (size_t i = 0; i < _print2.size(); i++)
+  {
+  stringPrint += _print2[i];
+  }
+  stringPrint += '\n';
+  for (size_t i = 0; i < _print3.size(); i++)
+  {
+  stringPrint += _print3[i];
+  }
+  stringPrint += '\n';
+  std::cout << stringPrint;
+  stringPrint = "";
 }

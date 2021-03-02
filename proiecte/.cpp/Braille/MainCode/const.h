@@ -2,24 +2,24 @@
 #include <vector>
 
 std::vector<std::vector<char> > l_A = {
-    {'A', 'A', 'A'},
-    {'A', 'A', 'A'},
-    {'A', 'A', 'A'}
+  {'A', 'A', 'A'},
+  {'A', 'A', 'A'},
+  {'A', 'A', 'A'}
 };
 std::vector<std::vector<char> > l_B = {
-    {'B', 'B', 'B'},
-    {'B', 'B', 'B'},
-    {'B', 'B', ' '}
+  {'B', 'B', 'B'},
+  {'B', 'B', 'B'},
+  {'B', 'B', ' '}
 };
 std::vector<std::vector<char> > l_C = {
-    {'C', 'C', 'C'},
-    {'C', 'C', 'C'},
-    {'C', ' ', ' '}
+  {'C', 'C', 'C'},
+  {'C', 'C', 'C'},
+  {'C', ' ', ' '}
 };
 std::vector<std::vector<char> > l_space = {
-    {' ', ' ', ' '},
-    {' ', ' ', ' '},
-    {' ', ' ', ' '}
+  {' ', ' ', ' '},
+  {' ', ' ', ' '},
+  {' ', ' ', ' '}
 };
 
 #define INPUT_FILE "input.in"

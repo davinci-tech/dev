@@ -11,12 +11,12 @@ std::ofstream fout(__NAME_OF_THE_FILE__ ".out");
 
 void Read()
 {
-    
+  
 }
 
 void Solve()
 {
-    
+  
 }
 
 void Show()
@@ -26,9 +26,9 @@ void Show()
 
 int main()
 {
-    Read();
-    Solve();
-    Show();
+  Read();
+  Solve();
+  Show();
 
-    return 0;
+  return 0;
 }

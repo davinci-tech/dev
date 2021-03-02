@@ -12,41 +12,41 @@ int x[25005], y[25005];
 
 void Read()
 {
-  std::cin >> n;
-  for (int i = 0; i < n; i++)
-  {
-  assert(std::cin >> x[i]);
-  }
+    std::cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        assert(std::cin >> x[i]);
+    }
 
-  std::cin >> m;
+    std::cin >> m;
 }
 
 void Solve()
 {
-  int y;
-  for (; m; m--)
-  {
-  std::cin >> y;
-  int st = 0, dr = n - 1;
-  bool poz = false;
-  while (st <= dr)
-  {
-  mijloc = (st + dr) / 2;
-  if (x[mijloc] == y)
-  {
-  poz = true;
-  break;
-  }
-  else
-  {
-  if (x[mijloc] > y)
-    dr = mijloc - 1;
-  else
-    st = mijloc + 1;
-  }
-  }
-  std::cout << (int)(poz) << ' ';
-  }
+    int y;
+    for (; m; m--)
+    {
+        std::cin >> y;
+        int st = 0, dr = n - 1;
+        bool poz = false;
+        while (st <= dr)
+        {
+            mijloc = (st + dr) / 2;
+            if (x[mijloc] == y)
+            {
+                poz = true;
+                break;
+            }
+            else
+            {
+                if (x[mijloc] > y)
+                    dr = mijloc - 1;
+                else
+                    st = mijloc + 1;
+            }
+        }
+        std::cout << (int)(poz) << ' ';
+    }
 }
 
 void Show()
@@ -55,9 +55,9 @@ void Show()
 
 int main()
 {
-  Read();
-  Solve();
-  Show();
+    Read();
+    Solve();
+    Show();
 
-  return 0;
+    return 0;
 }

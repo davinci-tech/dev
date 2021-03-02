@@ -14,46 +14,46 @@ bool isPalindrome(ll num);
 
 int main () {
 
-  fin >> N;
-  for (int i = 0; i < N; i++)   
-  {
-  std::string tmp;
-  fin >> tmp;
-  num += tmp;
-  sposs.push(tmp.size());
-  qposs.push(tmp.size());
-  }
+    fin >> N;
+    for (int i = 0; i < N; i++)     
+    {
+        std::string tmp;
+        fin >> tmp;
+        num += tmp;
+        sposs.push(tmp.size());
+        qposs.push(tmp.size());
+    }
 
-  for (int i = 0; i < num.size()/2; i++)
-  {
-  size_t posComplementara = num.size() - i + 1;
-  if (num[posComplementara] != num[i] && sposs.top() != qposs.front()) {
-  cnt++;
-  ll tmp = sposs.top();
-  sposs.pop();
-  tmp--;
-  sposs.push(tmp);
-  }
-  }
+    for (int i = 0; i < num.size()/2; i++)
+    {
+        size_t posComplementara = num.size() - i + 1;
+        if (num[posComplementara] != num[i] && sposs.top() != qposs.front()) {
+            cnt++;
+            ll tmp = sposs.top();
+            sposs.pop();
+            tmp--;
+            sposs.push(tmp);
+        }
+    }
 
-  return 0;
+    return 0;
 }
 
 
 bool isPalindrome(ll num) {
-  ll resultat = 0;
-  ll c_num = num;
+    ll resultat = 0;
+    ll c_num = num;
 
-  while(num) {
-  ll cifra = num % 10; // 123
-  resultat = resultat * 10 + cifra;
-  num /= 10;
-  }
+    while(num) {
+        ll cifra = num % 10; // 123
+        resultat = resultat * 10 + cifra;
+        num /= 10;
+    }
 
-  if (c_num == resultat)
-  return true;
+    if (c_num == resultat)
+        return true;
 
-  return false;
+    return false;
 }
 
 

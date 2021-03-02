@@ -8,7 +8,7 @@ ll N, A, B, rest;
 
 int main () {
 
-  fin >> N >> A >> B;
+    fin >> N >> A >> B;
 
-  return 0;
+    return 0;
 }

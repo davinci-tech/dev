@@ -6,41 +6,41 @@
 </head>
 
 <body>
-  <script>
-  function computerPlay() {
-  var options = ["paper", "rock", "scissors"];
-  return options[Math.floor(Math.random() * 10) % 3];
-  }
+    <script>
+        function computerPlay() {
+            var options = ["paper", "rock", "scissors"];
+            return options[Math.floor(Math.random() * 10) % 3];
+        }
 
-  function play(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
-  computerSelection = computerSelection.toLowerCase();
-  if (playerSelection == "rock" && computerSelection == "scissors")
-  console.log("You are jmecher!😎" + "\n" + playerSelection + " betats " + computerSelection);
-  else if (playerSelection == "paper" && computerSelection == "rock")
-  console.log("You are jmecher!😎" + "\n" + playerSelection + " betats " + computerSelection);
-  else if (playerSelection == "scissors" && computerSelection == "paper")
-  console.log("You are jmecher!😎" + "\n" + playerSelection + " betats " + computerSelection);
-  else if (playerSelection == computerSelection)
-  console.log("It is tie!" + "\n" + playerSelection);
-  else
-  console.log("You loose ! Maybe you are better next time😉" + "\n" + playerSelection + " is betated by " + computerSelection)
-  }
+        function play(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+            if (playerSelection == "rock" && computerSelection == "scissors")
+                console.log("You are jmecher!😎" + "\n" + playerSelection + " betats " + computerSelection);
+            else if (playerSelection == "paper" && computerSelection == "rock")
+                console.log("You are jmecher!😎" + "\n" + playerSelection + " betats " + computerSelection);
+            else if (playerSelection == "scissors" && computerSelection == "paper")
+                console.log("You are jmecher!😎" + "\n" + playerSelection + " betats " + computerSelection);
+            else if (playerSelection == computerSelection)
+                console.log("It is tie!" + "\n" + playerSelection);
+            else
+                console.log("You loose ! Maybe you are better next time😉" + "\n" + playerSelection + " is betated by " + computerSelection)
+        }
 
-  function main() {
-  do {
-  var myChoise = prompt("rock🪨 paper🧻 or scissors✂ ?\n ")
-  var computerChoise = computerPlay();
+        function main() {
+            do {
+                var myChoise = prompt("rock🪨 paper🧻 or scissors✂ ?\n ")
+                var computerChoise = computerPlay();
 
-  console.log(play(myChoise, computerChoise));
-  // var Ycontinue = "y";
-  // Ycontinue = prompt("Continue ? [Y / n]");
-  } while (true) // while (Ycontinue == "y") 
-  console.log("Bi bi!");
-  }
+                console.log(play(myChoise, computerChoise));
+                // var Ycontinue = "y";
+                // Ycontinue = prompt("Continue ? [Y / n]");
+            } while (true) // while (Ycontinue == "y") 
+            console.log("Bi bi!");
+        }
 
-  main();
-  </script>
+        main();
+    </script>
 </body>
 
 </html>

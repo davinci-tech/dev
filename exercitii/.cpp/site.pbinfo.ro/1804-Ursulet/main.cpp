@@ -11,36 +11,36 @@ int v[100000], st, dr, S = -1, Smax = INT32_MIN, start;
 
 void Read()
 {
-  fin >> n;
-  n++;
-  for (size_t i = 1; i < n; i++)
-  fin >> v[i];
+    fin >> n;
+    n++;
+    for (size_t i = 1; i < n; i++)
+        fin >> v[i];
 }
 
 void Solve()
 {
-  for (size_t i = 0; i < n; i++)
-  {
-  if (S < 0)
-  S = 0, start = i;
-  S += v[i];
-  if (S > Smax)
-  Smax = S, st = start, dr = i;
-  }
+    for (size_t i = 0; i < n; i++)
+    {
+        if (S < 0)
+            S = 0, start = i;
+        S += v[i];
+        if (S > Smax)
+            Smax = S, st = start, dr = i;
+    }
 }
 
 void Show()
 {
-  fout << Smax << '\n'
-   << st << ' ' << dr;
+    fout << Smax << '\n'
+         << st << ' ' << dr;
 }
 
 int main()
 {
 
-  Read();
-  Solve();
-  Show();
+    Read();
+    Solve();
+    Show();
 
-  return 0;
+    return 0;
 }

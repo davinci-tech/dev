@@ -13,40 +13,40 @@ size_t st, dr, start;
 
 void Read()
 {
-  fin >> N;
-  for (int i = 1; i <= N; i++)
-  fin >> nums[i];
+    fin >> N;
+    for (int i = 1; i <= N; i++)
+        fin >> nums[i];
 }
 
 void Solve()
 {
-  for (int i = 1; i <= N; i++)
-  {
-  if (S < 0) {
-  S = 0; start = i;
-  }
-  S ^= nums[i];
-  if ( S > Smax)
-  {
-  Smax = S;
-  st = start;
-  dr = i;
-  }
-  }
+    for (int i = 1; i <= N; i++)
+    {
+        if (S < 0) {
+            S = 0; start = i;
+        }
+        S ^= nums[i];
+        if ( S > Smax)
+        {
+            Smax = S;
+            st = start;
+            dr = i;
+        }
+    }
 }
 
 void Show()
 {
-  fout << Smax << ' ' << st << ' ' << dr;
+    fout << Smax << ' ' << st << ' ' << dr;
 }
 
 int main()
 {
-  Read();
-  Solve();
-  Show();
+    Read();
+    Solve();
+    Show();
 
-  return 0;
+    return 0;
 }
 
 

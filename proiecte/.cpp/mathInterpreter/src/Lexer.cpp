@@ -9,7 +9,7 @@ std::vector<Token> Lexer::scan(std::string data)
 {	
 	std::vector<Token> tokens;
 
-  for(size_t i = 0; i < data.size(); i++)
+    for(size_t i = 0; i < data.size(); i++)
 	{
 		if(isdigit(data[i])) { // determina numerele (momentat, doar numerele naturale) si ii aduga in vector
 			int value;
@@ -45,16 +45,16 @@ std::vector<Token> Lexer::scan(std::string data)
 
 bool Tools::isOperator(char _operator)
 {
-  std::vector<char> operators = {'+', '-', '*', '/', '(', ')'};
-  std::vector<std::string> names = {"OP_PLUS", "OP_MINUS", "OP_MUL", "OP_DIV", "OP_LBRACKET", "OP_RBRACKET"};
+    std::vector<char> operators = {'+', '-', '*', '/', '(', ')'};
+    std::vector<std::string> names = {"OP_PLUS", "OP_MINUS", "OP_MUL", "OP_DIV", "OP_LBRACKET", "OP_RBRACKET"};
 
-  for(size_t i = 0; i < operators.size(); i++)
-  {
-  if(_operator == operators[i])
-  {
-  OP_TYPE = names[i];
-  return true;
-  }
-  }
-  return false;
+    for(size_t i = 0; i < operators.size(); i++)
+    {
+        if(_operator == operators[i])
+        {
+            OP_TYPE = names[i];
+            return true;
+        }
+    }
+    return false;
 }

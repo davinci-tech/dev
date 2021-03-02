@@ -3,8 +3,8 @@
 		{
 			"path": "."
 		}
-  ],
-  "settings": {
+    ],
+    "settings": {
 		"editor.fontSize": 18,
 		"editor.formatOnType": true
 	}

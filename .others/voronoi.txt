@@ -1,0 +1,269 @@
+Multumiri lui Mihai Popa care a cotrobait prin arhiva de mesaje si a gasit
+mesajul de mai jos. El se refera la principiul dualitatii si am adaugat o
+bucata despre diagramele Voronoi.
+
+---------- Forwarded message ----------
+Date: Thu, 09 Dec 1999 17:01:37 -0500
+From: Catalin A Francu <cata@MIT.EDU>
+To: PROBLEME <probleme@ldc.ro>
+Subject: [probleme] Dualitatea in Geometria Computationala
+
+Noroc,
+
+Daca tot n-am mai prea trimis probleme, hai sa va impartasesc si voua
+ceva din adanca intelepciune care mi-a fost bagata cu pompa pe gat la
+MIT. Scriu sub impulsul momentului, asa ca nu va asteptati la prea multa
+coerenta.
+
+Incep cu observatia ca "Geometrie Computationala" nu suna prea
+romaneste, insa pe de alta parte "Geometrie Analitica" nu suna prea
+corect, fiindca nu e totuna cu ce se face (facea?) in clasa a XI-a de
+liceu.
+
+Sa pornim de la urmatoarea problema: Avem o colectie de N drepte in
+plan, oricare doua neconfundate, astfel incat nici una din ele nu trece
+prin origine. Sa se indice care din drepte sunt vizibile din origine.
+
+Un algoritm decent functioneaza in O(N^2), astfel: ia fiecare dreapta
+di, si o intersecteaaza cu fiecare din celelalte drepte dj. In acest
+fel, di se imparte in doua semidrepte, din care numai una este vizibila
+din origine, cealalta fiind obturata de catre dj. In felul acesta tot
+intersectam semidrepte peste semidrepte, si vedem daca in final ramanem
+cu vreun segment vizibil din origine. Desigur, pe parcurs apare tot
+tacamul de cazuri particulare: drepte verticale, drepte orizontale,
+erori de calcul, radicali, distante etc. Sper ca v-am scarbit destul ca
+sa vreti sa aflati si o implementare mai eleganta.
+
+Vom prezenta un algoritm foarte dragut si foarte cunoscut (in final)
+care rezolva problema in O(N log N). Facem intai urmatoarea conventie.
+De vreme ce dreptele nu trec prin origine, ele au ecuatii de forma
+ax+by+c=0, cu c<>0. Atunci le vom aduce pe toate la forma ax+by+1=0
+(evident, impartind prin c).
+
+Si-acum sa vedem ce este principiul dualitatii. El asociaza fiecarei
+drepte de forma ax+by+1=0 un punct de coordonate (a,b) in plan. Vom numi
+spatiul dreptelor "spatiu primal", iar spatiul punctelor corespunzatoare
+"spatiu dual". De aici decurg o multime de observatii foarte
+interesante, din care nici eu nu-mi aduc aminte decat cateva:
+
+1) Oricarui punct din spatiul dual ii corespunde o dreapta in spatiul
+primal, si ce este mai interesant, oricaror doua puncte distincte din
+spatiul dual le corespund drepte distincte in spatiul dual
+
+2) Oricarei drepte din spatiul primal ii corespunde un punct in spatiul
+dual. Exceptia o constituie dreptele care trec prin origine, pentru ca
+ele au c=0 si nu pot fi normalizate. Totusi, daca extindem spatiul dual
+ca sa contina si puncte de la infinit, atunci fiecarei drepte care trece
+prin origine in spatiul primal ii corespunde un punct de la infinit in
+spatiul dual. Cu asta, bijectia intre cele doua spatii este completa.
+
+3) Sa ne inchipuim acum doua drepte in spatiul primal, care se
+intersecteaza intr-un punct: ax+by+1=0, dx+ey+1=0. Fie (p,q) punctul lor
+de intersectie, care are proprietatile:
+
+ap+bq+1=0
+dp+eq+1=0
+
+Sa dualizam acum cele doua drepte. Obtinem punctele (a,b) si (d,e). Sa
+analizam ecuatia dreptei care trece prin aceste doua puncte:
+
+x-a   y-b
+--- - --- = 0 (*)
+d-a   e-b
+
+Dar ap+bq+1=dp+eq+1 ==> (d-a)p + (e-b)q = 0 ==> (d-a) = -(e-b)q/p
+
+Inlocuind asta in (*) si reducand numitorul (e-b) deducem:
+
+(x-a)p/q + (y-b) = 0 ==> px+qy-(pa+qb)=0, dar pa+qb=-1, deci ecuatia
+dreptei este:
+
+px+qy+1=0 !!!
+
+Cu alte cuvinte, daca dreptele d1 si d2 se taie in punctul P, atunci
+dualizand totul obtinem punctele dual(d1) si dual(d2), care determina
+tocmai dreapta dual(P). Asta mai arata si ca nu e obligatoriu ca in
+spatiul primal sa avem drepte si in spatiul dual sa avem puncte, ci
+putem dualiza orice, oriunde ( :) ).
+
+4) La fel se demonstreaza reciproca: doua puncte care determina o
+dreapta se dualizeaza in doua drepte care se intersecteaza intr-un
+punct.
+
+5) Generalizarea este si mai draguta: Un fascicol de drepte (pentru cei
+care nu prea dau pe la mate, asta inseamna o colectie de drepte care se
+intalnesc in acelasi punct) se dualizeaza intr-o multime de puncte,
+toate coliniare. Se demonstreaza folosind acelasi punct (p,q) pentru
+toate dreptele.
+
+6) Dar o colectie de drepte paralele? O sa radeti, dar se dualizeaza tot
+intr-o multime de puncte coliniare. Daca nu ma-nsel, dreapta care
+contine aceste puncte coliniare inteapa originea. Demonstratia se poate
+face fie prin calcul direct, fie observand ca in fond o colectie de
+drepte paralele este un fascicol de drepte care se intalnesc la infinit
+(Euclid sa traiasca!)
+
+7) Sa luam dreapta ax+by+1=0. Daca normalizam dreapta (impartind prin
+sqrt(a*a+b*b)), aflam ca distanta de la dreapta la origine este
+1/sqrt(a*a+b*b). Dualizand dreapta, obtinem punctul (a,b), care este
+situat la distanta sqrt(a*a+b*b) de origine. Mai expresiv, daca dreapta
+este la distanta d de origine, punctul dual este la distanta 1/d de
+origine. Mai interesant este ca punctul dual, originea si piciorul
+perpendicularei din origine pe dreapta sunt coliniare. E destul de usor
+de demonstrat, daca nu v-ati luat inca un creion si o hartie e cazul sa
+o faceti, altfel cred si eu ca va plictisiti :) Iata un fel de poza.
+
+      ^
+     \|
+      * (0,1/b)
+      |\
+      | \ Q = piciorul perpendicularei din origine pe dreapta
+      | /\
+     O|/d \ (1/a,0)
+ -----------------*----*-------------------->
+     /|     \
+    / |      \
+1  /d |       \
+  /   |        \ (dreapta)
+ /    |
+/     |
+   P* |
+
+   (=dualul)
+
+Si-acum momentul picant, problema de la care am pornit. Aici va trebui
+sa va faceti singuri figurile, fiindca slash-urile si backslash-urile nu
+mai ajung. Luati o multime de drepte care definesc un poligon in jurul
+originii, deci sunt vizibile din origine. Luati si alte drepte care nu
+intersecteaza acest poligon, deci nu sunt vizibile din origine.
+Asemanator figurii de mai sus, dualizati toate aceste drepte. Pentru
+fiecare dreapta, veti obtine un punct in partea opusa relativ la
+origine. Punctul este cu atat mai aproape de origine, cu cat dreapta
+este mai departe de origine.
+
+Dorim sa separam acum dreptele vizibile din origine de celelalte drepte.
+Sa vedem daca nu putem lucra cumva cu punctele duale. Intuitiv, ce
+inseamna o dreapta INvizibila din origine? Inseamna o dreapta
+"departata" de origine (in sensul ca alte drepte vor fi mai aproape
+decat ea si o vor obtura). In limbaj dual, asta inseamna ca punctul dual
+va fi mai aproape de origine, in sensul ca vor fi alte puncte mai
+departe decat el.
+Asta cred ca deja va sugereaza ideea de rezolvare. Daca v-ati gandit la
+infasuratoare convexa, ati pus punctul pe y. Algoritmul este urmatorul:
+
+- Se da multimea de drepte (ai*x+bi*y+ci=0)
+- Aducem toate dreptele la forma ai*x+bi*y+1=0, impartind prin ci
+- Aflam infasuratoarea convexa a multimii de puncte (ai,bi)
+- Punctele de pe aceasta infasuratoare convexa corespund dreptelor
+vizibile din
+origine.
+
+De ce asa? Pentru ca punctele de pe infasuratoarea convexa sunt cele mai
+departate de origine, deci dreptele lor duale sunt cele mai apropiate de
+origine. Va las placerea de a analiza cazurile particulare, de exemplu
+cele in care multimea de drepte nu defineste un poligon inchis in jurul
+originii, ci unul deschis (hint: originea nu apartine infasuratorii
+convexe a punctelor duale).
+
+O alta tema de gandire este: ce se intampla in cazul limita cand trei
+sau mai multe puncte sunt coliniare pe infasuratoarea convexa? De
+exemplu in cazul:
+
+Pi   Pj Pk      Pl
++----+---+-------+
+    /    \
+x
+..... Originea ....
+
+, punctele Pj si Pk corespund sau nu unor drepte vizibile din origine?
+
+-------------------------
+Asa, si acum diagramele Voronoi. In primul rand ce sunt alea. Sa
+consideram un poligon convex (pentru simplitate vom lua un dreptunghi) si
+n puncte P1, P2, ..., Pn in acel dreptunghi. Poligonul Voronoi al unui
+punct Pi este format din multimea acelor puncte P din dreptunghi care sunt
+mai aproape de Pi decat de orice alt punct Pj. Impartirea dreptunghiului
+in poligoane se numeste diagrama Voronoi.
+
+Exemple: Pentru n=1, exista un singur poligon Voronoi care este intregul
+dreptunghi. Pentru n=2, ducem mediatoarea lui P1 si P2 si o intersectam cu
+dreptunghiul, obtinand doua poligoane. Punctele din poligonul lui P1 sunt
+mai aproape de P1 decat de P2 si invers. Pentru n=3, ducem cele trei
+mediatoare ale segmentelor P1P2, P2P3 si P3P1. Mediatoarele se intalnesc
+intr-un punct (cercul cercului circumscris) si le prelungim pana
+intersecteaza dreptunghiul. Pentru n=3, cand P1 P2 si P3 sunt coliniare,
+dreptunghiul este sectionat in trei "felii".
+
+Se poate defini diagrama Voronoi si fara constrangerile dreptunghiului,
+adica pe intregul plan xOy, dar in acest caz poligoanele sunt "deschise"
+(se duc la infinit). In orice caz, nu este greu de demonstrat ca
+poligoanele Voronoi sunt convexe.
+
+O metoda "barbara" de a afla poligoanele Voronoi porneste de la observatia
+ca daca duc mediatoarea dintre Pi si Pj, atunci in mod sigur punctele de
+partea lui Pj nu au cum sa fie in poligonul lui Pi, pentru ca sunt mai
+aproape de Pj decat de Pi. Dec algoritmul este:
+
+- Pentru fiecare i afla poligonul lui Pi astfel:
+- Porneste cu un poligon egal cu intregul dreptunghi
+- Pentru fiecare j<>i
+- Intersecteaza poligonul cu mediatoarea lui PiPj si
+"arunca" bucata din partea lui Pj
+- Poligonul ramas este poligonul lui Pi
+
+Complexitatea este O(N^3), iar numarul de cazuri particulare este mare. In
+continuare revenim la principiul dualitatii si la problema de mai sus, a
+vizibilitatii unor drepte dintr-un punct.
+
+Sa ne imaginam punctul Pi inconjurat de n+3 drepte: cele n-1 mediatoare
+ale segmentelor PiPj si cele 4 laturi ale dreptunghiului. Atunci poligonul
+Voronoi al lui Pi are drept laturi exact segmentele "vizibile" din Pi ale
+acestor n+3 drepte. Si dupa cum am vazut mai sus, aceasta problema se
+reduce la infasuratoare convexa. Trebuie avut grija pentru ca in
+rezolvarea de mai sus a problemei vizibilitatii am presupus ca punctul de
+observare este originea. Deci in cazul general va trebui sa translatam
+totul in asa fel incat Pi sa ajunga in origine, pentru a putea aplica
+principiul dualitatii. Un ultim aspect care trebuie abordat este acela ca
+problema de mai sus indica numai care drepte sunt vizibile, nu exact ce
+segmente din acele drepte.
+
+Algoritmul pentru aflarea poligonului Voronoi al lui Pi este:
+
+- Translateaza tot sistemul pentru a suprapune Pi peste origine **
+- Construieste colectia de n+3 drepte D1, D2, ..., Dn+3
+- Rezolva infasuratoarea convexa si afla colectia de drepte vizibile
+din origine, fie ele V1, V2, ..., Vk (in ordine trigonometrica)
+- Calculeaza varfurile poligonului Voronoi: Wi = Vi-1 int. cu Vi
+- Retranslateaza originea si {Wi} pentru a duce Pi in pozitia originala
+
+** Cum se translateaza colectia de puncte este clar: din fiecare Pj.x se
+scade Pi.x si din fiecare Pj.y se scade Pi.y; in acest fel Pi.x si pi.y
+devin 0. Cum translatam laturile dreptunghiului (sau in cazul general o
+dreapta oarecare) ? Daca ecuatia originala era ax+by+c=0, scriem aceasta
+ecuatie relativ la Pi.x si Pi.y:
+
+Fie t=a*Pi.x + b*Pi.y + c
+a(x-Pi.x) + b(y-Pi.y) + t =0
+
+Deci noua ecuatie este
+ax + by + t =0
+
+Cu alte cuvine, pentru a translata dreapta cu -Pi.x si -Pi.y, scadem din c
+valoarea a*Pi.x + b*Pi.y.
+
+Complexitatea noului algoritm este (pentru un singur poligon):
+- O(N) translatia
+- O(N) constructia dreptelor
+- O(N) dualizarea
+- O(N log N) infasuratoarea convexa
+- O(N) constructia poligonului Voronoi
+- O(N) translatia inapoi
+
+Pentru intreaga diagrama complexitatea este O(N^2 log N).
+Programul este implementat si testat. Nu este chiar scurt daca il
+construiti de la 0, dar daca puteti scrie fara greseala rutinele pentru
+infasuratoare convexa, intersectii de drepte si asa mai departe, cam in
+1.5 - 2 ore ar trebui sa puteti programa toata povestea asta.
+
+Si acum fug sa invat, am un test la Java care de fapt este un test de
+gargara despre managementul proiectelor de software. O abureala compl

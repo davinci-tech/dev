@@ -1,0 +1,16 @@
+#title1 {
+    font-family: Arial;
+    text-align: center;
+    color: blue;
+}
+
+body {
+    background-color: #000000;
+}
+
+#image1 {
+    border: 1px solid #ccc;
+    opacity: 50%;
+    margin-left: 150px;
+    margin-bottom: 100px;
+}

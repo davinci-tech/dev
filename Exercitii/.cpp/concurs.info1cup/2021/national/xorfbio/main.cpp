@@ -51,7 +51,7 @@ int main()
     return 0;
 }
 
-// genereaza urmatorul numar fib
+// genereaza urmatorul numar fibbonaci
 ll generateFib()
 {
     ll resultat;

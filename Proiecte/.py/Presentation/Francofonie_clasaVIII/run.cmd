@@ -1,1 +1,1 @@
-manim example.py MainScene -p -ql
+manim main.py MainScene -p -ql

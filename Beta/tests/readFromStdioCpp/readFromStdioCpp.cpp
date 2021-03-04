@@ -7,7 +7,6 @@ int main()
 
   int prevChar = 0;
   prevChar = fin.get();
-
   prevChar = fin.get();
   prevChar = fin.get();
 

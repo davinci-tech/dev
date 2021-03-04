@@ -5,7 +5,7 @@ class MainScene(Scene):
     circle = Circle()
     square = Square()
     square.flip(RIGHT)
-    # square.rotate(-3 * TAU / 8)
+    square.rotate(-3 * TAU / 8)
     circle.set_fill(PINK, opacity=0.5)
 
     self.play(ShowCreation(square))

@@ -1,1 +1,4 @@
 # This file is used internally by FFMPEG.
+file 'file:Z:/dev/Proiecte/.py/Presentation/Francofonie_clasaVIII/media/videos/main/480p15/partial_movie_files/MainScene/3163782288_2814546438_3045458474.mp4'
+file 'file:Z:/dev/Proiecte/.py/Presentation/Francofonie_clasaVIII/media/videos/main/480p15/partial_movie_files/MainScene/1495979052_3517707382_3045458474.mp4'
+file 'file:Z:/dev/Proiecte/.py/Presentation/Francofonie_clasaVIII/media/videos/main/480p15/partial_movie_files/MainScene/1495979052_2237162485_3045458474.mp4'

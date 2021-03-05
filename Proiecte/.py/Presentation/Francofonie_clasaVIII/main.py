@@ -2,6 +2,14 @@ from manim import *
 
 class MainScene(Scene):
   def construct(self):
+    mesaj = Text("Gata")
+    punct = Dot(radius=0)
+
+    self.play(Write(mesaj))
+    self.play(Transform(mesaj, punct))
+
+class InitialScene(Scene):
+  def construct(self):
     circle = Circle()
     square = Square()
     square.flip(RIGHT)

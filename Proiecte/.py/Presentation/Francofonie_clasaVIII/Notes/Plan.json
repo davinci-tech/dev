@@ -1,0 +1,13 @@
+{
+    "slides": [
+        {
+            "number": 0,
+            "title": "Goodby!",
+            "description": "The title slide"
+        },
+        {
+            "number": 1,
+            "title": "Title"
+        }
+    ]
+}

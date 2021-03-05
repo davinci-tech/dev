@@ -1,0 +1,92 @@
+{
+  "main": {
+    "id": "0c9aa536d2bcf24d",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef7a6b847537cf3d",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Plan.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "418a2efa41b02d6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "197e411edd87ae57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83471b2cd427962d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e0f1a4fbe53ec007",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3a0245637ba42886",
+    "type": "split",
+    "children": [
+      {
+        "id": "337bd29592bf92b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5eb077ea4b7cfb0a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Plan.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Plan.md",
+    "Untitled.md"
+  ]
+}

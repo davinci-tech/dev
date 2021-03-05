@@ -1,8 +1,6 @@
 from manim import *
 import json
 
-from rich.console import get_windows_console_features
-
 info = json.load(open(".\\Notes\\Plan.json", "r"))
 
 class MainScene(Scene):

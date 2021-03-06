@@ -9,6 +9,10 @@ struct Num
 } V[10];
 int N, x;
 
+bool test(Num a, Num b) {
+	return (a.cnt < b.cnt || (a.cnt == b.cnt && a.val < b.val));
+}
+
 int main()
 {
 
@@ -33,15 +37,7 @@ int main()
         V[i].val = i;
     }
     
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = i + 1; j < 10; j++)
-        {
-            if (V[i].cnt > V[j].cnt || (V[i].cnt == V[j].cnt && V[i].val > V[j].val))
-                swap(V[i], V[j]);
-        }
-        
-    }
+    sort(V, V+10, test);
     
     for (int i = 0; i < 10; i++)
         if (V[i].cnt > 0)

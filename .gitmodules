@@ -1,3 +1,3 @@
-[submodule "'Proiecte/.cpp/Language'"]
-	path = 'Proiecte/.cpp/Language'
+[submodule "Proiecte/.cpp/Language"]
+	path = Proiecte/.cpp/Language
 	url = https://github.com/davinci-tech/Language

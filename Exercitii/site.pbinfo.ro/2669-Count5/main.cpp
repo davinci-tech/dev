@@ -4,70 +4,71 @@ using namespace std;
 
 struct Num
 {
-    int val;
-    int sumCif;
+    size_t val = 0;
+    size_t sumCif = 0;
 
-    void sum()
+    void suma()
     {
-        while (val)
+        size_t valCopy = val;
+        while (val > 0)
         {
             sumCif += val % 10;
             val /= 10;
         }
+        val = valCopy;
     }
-} nums[100005];
 
-int N;
+    friend ostream &operator<<(ostream &os, Num a);
+    // friend bool operator==(Num a, Num b);
+};
 
-bool compare(Num a, Num b)
+ostream &operator<<(ostream &os, Num a)
 {
-    return (a.sumCif > b.sumCif);
+    return os << a.val << ':' << a.sumCif << '\n';
 }
-bool NumEgal(Num a, Num b)
-{
-    return (a.val == b.val && a.sumCif == b.sumCif);
-}
+// bool operator==(Num a, Num b)
+// {
+//     return a.val == b.val && a.sumCif == b.sumCif;
+
+// }
+size_t N;
+auto comp = [](Num a, Num b) { return a.sumCif <= b.sumCif; };
+std::priority_queue<Num, std::vector<Num>, decltype(comp)> nums(comp);
 
 int main()
 {
-
-    int cnt = 0;
+    size_t cnt = 0;
     cin >> N;
-    for (int i = 0; i < N; i++)
+    for (size_t i = 0; i < N; i++)
     {
-        cin >> nums[i].val;
-        nums[i].sum();
+        Num numar;
+        cin >> numar.val;
+        numar.suma();
+        nums.push(numar);
     }
 
-    sort(nums, nums + N, compare);
+    Num pre;
+    pre = nums.top();
+    nums.pop();
+    std::cout << pre;
 
-    for (int i = -1; i < N; i++)
+    size_t cnt1 = 0;
+    while (!nums.empty())
     {
-        if (nums[i].val == nums[i - 1].val && NumEgal(nums[i], nums[i - 1]))
-            cnt++;
+        if (pre.val == nums.top().val)
+        {
+            if (cnt1 == 0)
+                cnt1++;
+            else
+            {
+                cnt += cnt1 * (cnt1 + 1) / 2;
+                cnt1 = 0;
+            }
+        }
+        std::cout << nums.top();
+        nums.pop();
     }
     cout << cnt;
-
-    return 0;
-}
-
-int _main()
-{
-
-    int num;
-    std::priority_queue<int> V;
-
-    do 
-    {
-        std::cin >> num;
-        V.push(num);
-    } while (num != -200);
-
-    while (!V.empty())
-    {
-        std::cout << V.top() << ' ';
-        V.pop();
-    }
 
     return 0;
 }

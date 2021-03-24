@@ -1,3 +1,5 @@
+WD := Z:\\dev
+
 update:
 	-git remote add origin https://github.com/davinci-tech/dev.git
 	-git checkout main

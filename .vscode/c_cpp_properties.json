@@ -28,7 +28,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "/usr/sbin/g++.exe",
+            "compilerPath": "/usr/bin/g++",
             "windowsSdkVersion": "10.0.18362.0",
             "cStandard": "c17",
             "cppStandard": "c++17",

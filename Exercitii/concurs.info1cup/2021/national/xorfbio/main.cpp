@@ -13,6 +13,7 @@ ll generateFib();
 
 int main()
 {
+
     fin >> Q;
     for (ll i = 0; i < Q; i++)
         for (int j = 1; j < 4; j++)
@@ -51,7 +52,7 @@ int main()
     return 0;
 }
 
-// genereaza urmatorul numar fibbonaci
+// genereaza urmatorul numar fib
 ll generateFib()
 {
     ll resultat;

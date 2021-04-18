@@ -1,7 +1,7 @@
 # Installing some base utilities
-sudo dnf update
-sudo dnf upgrade
-sudo dnf install tmux \
+sudo apt update
+sudo apt upgrade
+sudo apt install tmux \
 	htop \
 	curl \
 	vim \
@@ -43,10 +43,10 @@ wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.0
 dpkg -i teams_1.3.00.5153_amd64.deb
 
 #Installing Brave Browser
-curl -s https://brave-browser-dnf-release.s3.brave.com/brave-core.asc | sudo dnf-key --keyring /etc/dnf/trusted.gpg.d/brave-browser-release.gpg add -
-sudo sh -c 'echo "deb [arch=amd64] https://brave-browser-dnf-release.s3.brave.com `lsb_release -sc` main" >> /etc/dnf/sources.list.d/brave.list'
-sudo dnf update
-sudo dnf install brave-browser brave-keyring
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+sudo sh -c 'echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com `lsb_release -sc` main" >> /etc/apt/sources.list.d/brave.list'
+sudo apt update
+sudo apt install brave-browser brave-keyring
 
 # Configuring zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -54,6 +54,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 # Cleanup time!
-sudo dnf install cmatrix
-sudo dnf autoremove
+sudo apt install cmatrix
+sudo apt autoremove
 cmatrix

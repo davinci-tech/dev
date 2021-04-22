@@ -3,3 +3,10 @@
 
 # Temp folder
 temp
+
+# Manim unnecessary folders
+media/Tex/
+media/texts/
+
+# Python 
+__pycache__

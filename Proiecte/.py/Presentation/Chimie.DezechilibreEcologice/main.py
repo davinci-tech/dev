@@ -9,8 +9,6 @@ TextDict = {
 }
 
 class MyPresentation(Scene):
-    
-
     def configurate(self):
         grid = ScreenGrid()
         # self.add(grid)
@@ -23,7 +21,12 @@ class MyPresentation(Scene):
 
     def Scene1(self):
         title = Text("Dezechilibrele Ecologice")
-        definition = Tex(r"\small\tiny{= totalitatea schimbarilor care nu mai stiu eu ce ... bla bla bla iar acum am adaugat chiar si mai mult text mult mai mult muuult}") # add even more text
+        Tex
+        definition = Text(
+            "reprezinta totalitatea schimbarilor care nu mai stiu eu ce ... bla bla bla iar acum am adaugat chiar si mai mult text mult mai mult muuult",
+            width = config.frame_width - 3,
+            font_size = 14
+        )
 
         self.play(Write(title))
         self.wait(2)

@@ -1,7 +1,6 @@
 
 from manim import *
 
-
 TextDict = {
     "Intro": {
         "title": "Dezechilibrele Ecologice",
@@ -10,6 +9,8 @@ TextDict = {
 }
 
 class MyPresentation(Scene):
+    
+
     def configurate(self):
         grid = ScreenGrid()
         # self.add(grid)
@@ -18,11 +19,22 @@ class MyPresentation(Scene):
 
     def construct(self):
         self.configurate()
-        self.Scene1()
+        self.Scene1() # The title and the definition
 
     def Scene1(self):
         title = Text("Dezechilibrele Ecologice")
-        definition = Text("= totalitatea schimbarilor care nu mai stiu eu ce ... bla bla bla").scale(0.5).to_edge(LEFT)
+        definition = Tex(r"\small\tiny{= totalitatea schimbarilor care nu mai stiu eu ce ... bla bla bla iar acum am adaugat chiar si mai mult text mult mai mult muuult}") # add even more text
+
+        self.play(Write(title))
+        self.wait(2)
+        self.play(Transform(title, definition))
+        self.wait()
+
+    def auxScene1(self):
+        title = Text("Dezechilibrele Ecologice")
+        self.add(title.scale(0.6).to_corner(UL))
+
+        self.wait()
 
         self.play(Write(title))
         self.play(
@@ -30,12 +42,6 @@ class MyPresentation(Scene):
             title.to_corner, UL
         )
         self.play(Write(definition.shift(UP*2.6).shift(RIGHT * 0.5)))
-
-        self.wait()
-
-    def auxScene1(self):
-        title = Text("Dezechilibrele Ecologice")
-        self.add(title.scale(0.6).to_corner(UL))
 
         self.wait()
 

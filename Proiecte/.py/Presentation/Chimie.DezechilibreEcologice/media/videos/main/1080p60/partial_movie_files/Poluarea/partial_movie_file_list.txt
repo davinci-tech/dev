@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:F:/dev/Proiecte/.py/Presentation/Chimie.DezechilibreEcologice/media/videos/main/1080p60/partial_movie_files/Poluarea/1172921398_578236693_2041920856.mp4'
+file 'file:F:/dev/Proiecte/.py/Presentation/Chimie.DezechilibreEcologice/media/videos/main/1080p60/partial_movie_files/Poluarea/2842982379_3746181147_3942520170.mp4'
+file 'file:F:/dev/Proiecte/.py/Presentation/Chimie.DezechilibreEcologice/media/videos/main/1080p60/partial_movie_files/Poluarea/2842982379_57222483_4902327.mp4'

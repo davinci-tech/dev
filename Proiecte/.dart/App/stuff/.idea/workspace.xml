@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d604034-e344-4b7e-8209-fbe8b5fdfb92" name="Default Changelist" comment="" />
+    <list default="true" id="48b88f0a-7e24-4fe0-a4a8-2299cba21fb0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1ul8w3PAbJy9gx1MEtn8iDH5FYU" />
+  <component name="ProjectId" id="1ul9D5nVEWthe0pkAjNYlR2npz2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -20,21 +20,31 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9d604034-e344-4b7e-8209-fbe8b5fdfb92" name="Default Changelist" comment="" />
-      <created>1625229055298</created>
+      <changelist id="48b88f0a-7e24-4fe0-a4a8-2299cba21fb0" name="Default Changelist" comment="" />
+      <created>1625229203202</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1625229055298</updated>
+      <updated>1625229203202</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="258" y="67" key="new project wizard" timestamp="1625229185694">
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1625233014077">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="258" y="67" key="new project wizard/0.0.1366.720@0.0.1366.720" timestamp="1625229185694" />
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1625233014077" />
+    <state x="258" y="67" key="new project wizard" timestamp="1625233034188">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="258" y="67" key="new project wizard/0.0.1366.720@0.0.1366.720" timestamp="1625233034188" />
   </component>
 </project>

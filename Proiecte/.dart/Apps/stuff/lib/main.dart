@@ -21,8 +21,64 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+        '/menu': (context) => MenuPage(),
+      },
+      onGenerateRoute: (settings) {
+        //  Getting the arguments from the RouteSettings
+        // final args = settings.arguments;
+        switch (settings.name) {
+          // If the name of the route is '/', then we will create navigate to
+          // the MyHomePage
+          case '/':
+            return MaterialPageRoute(
+                builder: (context) =>
+                    MyHomePage(title: 'Flutter Demo Home Page'));
+          // If the name of the route is '/', then we will create navigate to
+          // the MenuPage
+          case '/menu':
+            return MaterialPageRoute(builder: (context) => MenuPage());
+
+          // In case of error
+          default:
+            return MaterialPageRoute(builder: (context) {
+              return Scaffold(
+                body: Container(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Text(
+                            'Error this is not an existing PageRoute',
+                            style: TextStyle(
+                                color: Colors.red[700],
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: ElevatedButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: Text('Go to the previouse page'),
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.green[900],
+                                elevation: 20
+                              )
+                            ),
+                          ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.center,
+                      ),
+                    ),
+                    color: Colors.green[800]),
+              );
+            });
+        }
+      },
     );
   }
 }
@@ -72,6 +128,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: IconButton(
+            onPressed: () => Navigator.of(context).pushNamed('/menu'),
+            icon: Icon(Icons.menu)),
+        centerTitle: true,
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -106,8 +166,28 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, color: Colors.white),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class MenuPage extends StatelessWidget {
+  const MenuPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Menu Page'),
+      ),
+      appBar: AppBar(
+        title: Text('Menu Page'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ),
     );
   }
 }
